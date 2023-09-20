@@ -10,7 +10,10 @@ function Header() {
             <a href="/episodes">Episodes</a>
         </div>
 
-        <button className='theme-button'>Dark Mode</button>
+        <div>
+          <a href="/favorites">My Favourites</a>
+          <button className='theme-button'>Dark Mode</button>
+        </div>
 
     </div>
   )

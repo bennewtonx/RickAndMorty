@@ -1,28 +1,40 @@
 import { useState } from 'react'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 import './App.css'
-import Header from './components/Header/Header';
-import Homepage from './pages/Homepage/Homepage';
-import About from './pages/About/About';
-import Episodes from './pages/Episodes/Episodes';
-import CharacterDetails from './pages/CharacterDetails/CharacterDetails';
-import Footer from './components/Footer/Footer';
+import Footer from './components/Footer/Footer'
+import Header from './components/Header/Header'
+import FavoritesContextProvider from './contexts/FavoritesContext'
+import About from './pages/About/About'
+import CharacterDetails from './pages/CharacterDetails/CharacterDetails'
+import Episodes from './pages/Episodes/Episodes'
+import Favorites from './pages/favorites/Favorites'
+import HomePage from './pages/HomePage/HomePage'
+
+
 
 function App() {
+ 
 
   return (
-    <BrowserRouter>
-      <Header />
+    
+      <BrowserRouter>
       
-    <Routes>
-      <Route path='/' element={<Homepage />}/>
-      <Route path='About' element={<About />}/>
-      <Route path='Episodes' element={<Episodes />}/>
-      <Route path='/details/:characterId' element={<CharacterDetails />}/>
-    </Routes>
-
-      <Footer />
-    </BrowserRouter>
+        <FavoritesContextProvider>
+        <Header />
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/episodes' element={<Episodes />} />
+          <Route path='/favorites' element={<Favorites />} />
+          <Route path='/details/:characterId' element={<CharacterDetails />} />
+        </Routes>
+        
+        <Footer />
+        </FavoritesContextProvider>
+        
+      </BrowserRouter>
+    
   )
 }
 
