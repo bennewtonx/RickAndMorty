@@ -9,7 +9,7 @@ import About from './pages/About/About'
 import CharacterDetails from './pages/CharacterDetails/CharacterDetails'
 import Episodes from './pages/Episodes/Episodes'
 import Favorites from './pages/favorites/Favorites'
-import HomePage from './pages/HomePage/HomePage'
+import HomePage from './pages/Homepage/Homepage';
 
 
 
